@@ -11,7 +11,7 @@ function Home() {
 
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:4700");
+      const response = await fetch("https://currency-xchange.onrender.com");
       if (!response.ok) {
         throw new Error(`Error: ${response.status} ${response.statusText}`);
       }
@@ -38,7 +38,7 @@ function Home() {
 
   const addCurrency = async () => {
     try {
-      const response = await fetch("http://localhost:4700/add-currency", {
+      const response = await fetch("https://currency-xchange.onrender.com/add-currency", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ currency: selectedCurrency }),
@@ -57,7 +57,7 @@ function Home() {
 
   const updateRates = async () => {
     try {
-      const response = await fetch("http://localhost:4700/update-rates");
+      const response = await fetch("https://currency-xchange.onrender.com/update-rates");
       if (!response.ok) {
         throw new Error("Failed to update rates");
       }
@@ -70,7 +70,7 @@ function Home() {
 
   const deleteCurrency = async (currency) => {
     try {
-      const response = await fetch("http://localhost:4700/delete-currency", {
+      const response = await fetch("https://currency-xchange.onrender.com/delete-currency", {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ currency }),
